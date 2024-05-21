@@ -1,0 +1,11 @@
+El trabajo integrador es el último trabajo de la materia y hace uso de los circuitos y comunicaciones utilizados en los trabajos anteriores. A su vez, agrega una nueva comunicación a través de WIFI.
+
+Si analizan el sistema de prueba completo, este prototipo les permitiría, adaptando los datos enviados, actualizar un equipo antiguo manejado por control remoto, agregándole la posibilidad de ser controlado desde cualquier dispositivo conectado a la red wifi local y convertirlo de esta forma en "Smart". 
+
+Ese dispositivo en este caso está resumido en un led RGB que necesita solo cuatro datos para funcionar, pero, entendiendo el protocolo infrarrojo empleado por el equipo a comandar, puede adaptarse el sistema a cualquier equipo.
+
+Un paso más seria poder comandarlo remotamente desde cualquier parte utilizando la nube, pero eso les queda como desafío personal.
+
+Lo primordial en este trabajo es que el usuario final, que estaría viendo la interfaz del dispositivo 3, debe visualizar constantemente el estado de conexión y enterarse si por algún motivo la conexión con el dispositivo 2 fue interrumpida. Piensen que en el monitoreo de procesos es importantísimo saber si los datos visto en pantalla son reales o están atrasados en el tiempo.
+
+Esperamos les resulte interesante este desafío y quedamos a disposición para cualquier duda que vaya surgiendo.
