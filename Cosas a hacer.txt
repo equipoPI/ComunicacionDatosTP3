@@ -1,0 +1,6 @@
+Agregar:
+boton guardar en aplicacion (guarda en el arduino)
+boton prender y apagar en la aplicacion 
+acutualizacion del color de la aplicacion cunado se conecta nuevamente
+agregar en el Arduino la parte de guardar en la EEPROM
+agregar en el Arduino la parte de envira el color de trabajo
