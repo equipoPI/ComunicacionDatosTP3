@@ -1,7 +1,7 @@
 Agregar:
 añadir boton guardar (guarda en la EPROM del arduino)
 agregar en el Arduino la parte de guardar en la EEPROM
-boton prender y apagar (se prende y apaga con el color que estaen al app)
+boton prender y apagar (se prende y apaga con el color que esten al app)
 acutualizacion del color de la app cuando se conecta nuevamente. Ej: queda en amarillo y se desconecta la app, se cambia el color de la app, cuando nos conectamos de nuevo el color de la app se cambia al que esta en el rgb.
 agregar en el Arduino la parte de envira el color de trabajo
-agregar led de conexion o desconexion 
+agregar led de conexion o desconexion // parte hecha por software y hardware

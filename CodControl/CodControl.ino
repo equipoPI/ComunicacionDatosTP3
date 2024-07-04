@@ -10,6 +10,7 @@ SoftwareSerial BT(BT_Rx, BT_Tx);
 
 #define LED_con 2
 #define IR_emitter 9
+#define control_estado 3
 
 byte registroR = 0;
 byte registroG = 0;
@@ -20,8 +21,14 @@ int dato1 = 0;
 int dato2 = 0;
 
 byte flag = false;
+byte disp_estado = false;
+
+int x = 0;
 
 void setup() {
+  pinMode(LED_con, OUTPUT);
+  pinMode(control_estado, INPUT);
+
   // put your setup code here, to run once:
   irsend.begin(IR_emitter);   //funcion de la libreria IRremote para defini el pin donde se conecta el emisor
   Serial.begin(9600);
@@ -30,10 +37,23 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
- lectura();
- deteccion();
+  arranque();
 
+  control_conexion();
+
+  lectura();
+
+  deteccion();
   envio();
+}
+
+void arranque() {
+  if (x == 0) {
+    registroR = EEPROM.read(0);
+    registroG = EEPROM.read(1);
+    registroB = EEPROM.read(2);
+    x = x + 1;
+  }
 }
 
 void lectura() {
@@ -96,4 +116,22 @@ void envio() {
 
   // irsend.sendNEC(0x64, 0x64, 1);
   irsend.sendNEC(34, registroB, 1);
+}
+
+void enviarValoresRGB() {
+  // Enviar los valores RGB actuales a la aplicación a través de Bluetooth
+  BT.write(registroR);
+  BT.write(registroG);
+  BT.write(registroB);
+  //Serial.println("Valores RGB enviados a la aplicación");
+}
+
+void control_conexion() {
+  disp_estado = digitalRead(control_estado);
+  if (disp_estado == true) {
+    pinMode(LED_con, HIGH);
+  }
+  else {
+    pinMode(LED_con, LOW);
+  }
 }
