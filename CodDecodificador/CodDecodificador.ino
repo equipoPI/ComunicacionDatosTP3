@@ -48,6 +48,12 @@ void loop() {
     }
     IrReceiver.resume();
   }
+
+Serial.print(intensidadR);
+Serial.print("  ");
+Serial.print(intensidadG);
+Serial.print("  ");
+Serial.println(intensidadB);
   
   analogWrite(PIN_LED_RED, intensidadR);
   analogWrite(PIN_LED_GREEN, intensidadG);
